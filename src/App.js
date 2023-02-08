@@ -10,7 +10,10 @@ function App() {
   };
   // function for evaluation
   const handleEqual = () => {
-    setInput(eval(input).toString());
+    let result = Function("return " + input)();
+    //or
+    // let result = eval(input).toString();
+    setInput(result);
   };
   const handleClear = () => {
     setInput("");
