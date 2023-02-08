@@ -1,0 +1,115 @@
+.App {
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.App::before {
+  content: "";
+  position: absolute;
+  bottom: -6rem;
+  left: -6rem;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(218, 165, 32, 0.5);
+  z-index: -1;
+}
+
+.App::after {
+  content: "";
+  position: absolute;
+  top: -8rem;
+  right: -8rem;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: rgba(218, 165, 32, 0.5);
+  z-index: -1;
+}
+
+.App .calculator {
+  width: 350px;
+  height: 450px;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.App .calculator .display {
+  outline: none;
+  width: 100%;
+  height: 25%;
+  font-size: 2.5rem;
+  text-align: right;
+  color: #ccc;
+  background-color: #000;
+  border: none;
+  box-shadow: inset 0 0 5px #111, 0 0 10px #222;
+  padding-inline: 1rem;
+  caret-color: goldenrod;
+}
+
+.App .calculator .keys {
+  height: 75%;
+  padding-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.1rem;
+}
+
+.App .calculator .keys button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  font-weight: 500;
+  background-color: lightgray;
+  transition: all 300ms;
+}
+
+.App .calculator .keys button:hover {
+  background-color: rgb(171, 171, 171);
+}
+
+.App .calculator .keys .operator {
+  background-color: goldenrod;
+}
+
+.App .calculator .keys .operator:hover {
+  background-color: rgb(179, 135, 23);
+}
+
+.App .calculator .keys .function {
+  background-color: rgb(241, 224, 183);
+}
+
+.App .calculator .keys .function:hover {
+  background-color: rgb(240, 215, 156);
+}
+
+/* mobile phones  */
+@media screen and (max-width: 767px) {
+  .App .calculator {
+    width: 95%;
+    height: 90vh;
+  }
+}
+
+/* ipad  */
+@media screen and (min-width: 768px) and (max-width:1024px) {
+  .App .calculator {
+    width: 85%;
+    height: 70vh;
+    padding: 20px;
+  }
+}
